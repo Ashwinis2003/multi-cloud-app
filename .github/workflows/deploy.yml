@@ -17,16 +17,16 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build Frontend Image
-      run: docker build -t ${{ secrets.REGISTRY_URL }}/frontend ./frontend
+      run: docker build -t ${{ secrets.docker.io/ashw2003 }}/frontend ./frontend
 
     - name: Build Backend Image
-      run: docker build -t ${{ secrets.REGISTRY_URL }}/backend ./backend
+      run: docker build -t ${{ secrets.docker.io/ashw2003 }}/backend ./backend
 
     - name: Push Frontend Image
-      run: docker push ${{ secrets.REGISTRY_URL }}/frontend
+      run: docker push ${{ secrets.docker.io/ashw2003 }}/frontend
 
     - name: Push Backend Image
-      run: docker push ${{ secrets.REGISTRY_URL }}/backend
+      run: docker push ${{ secrets.docker.io/ashw2003 }}/backend
 
     - name: Deploy to Kubernetes
       run: |
